@@ -1,14 +1,13 @@
 pipeline { 
-      agent {
-	      label {
-		      label '172.31.11.74'
-	      }
+      agent { 
+		      label 'buil-in'
+	      
 	  }
 	  stages {
-	         stage ('slave1') {
+	         stage ('master') {
 			   steps {
-			     
-		     sh "sudo yum install httpd -y"
+		     sh "rm -rf *"	     
+		     sh"yum install httpd -y"
 			 sh "sudo service httpd start"
 			 sh "sudo cp -r index.html /var/www/html/"
 			 sh "sudo chmod -R 777 /var/www/html/index.html"
