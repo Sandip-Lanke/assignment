@@ -1,9 +1,11 @@
 pipeline { 
       agent {
-	      label 'built-in'
+	      label {
+		      label '172.31.11.74'
+	      }
 	  }
 	  stages {
-	         stage ('master') {
+	         stage ('slave1') {
 			   steps {
 			     
 		     sh "yum install httpd -y"
