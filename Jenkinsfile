@@ -5,8 +5,7 @@ pipeline {
 	  }
 	  stages {
 	         stage ('master') {
-			   steps {
-		     sh "rm -rf *"	     
+			   steps {	     
 		     sh"yum install httpd -y"
 			 sh "sudo service httpd start"
 			 sh "sudo cp -r index.html /var/www/html/"
